@@ -2,6 +2,7 @@
   "name": "test-order",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://blackkkout.github.io/test-order",
   "dependencies": {
     "@mui/icons-material": "^5.16.5",
     "@mui/material": "^5.16.5",
@@ -9,6 +10,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "gh-pages": "^6.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
@@ -16,6 +18,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",

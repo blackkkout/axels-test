@@ -11,6 +11,7 @@ import { NavigateNextRounded } from '@mui/icons-material';
 
 import { Root } from './Order.styles';
 import { ShippingForm } from '../ShippingForm/ShippingForm';
+import { OrderSummary } from '../OrderSummary/OrderSummary';
 
 export function Order() {
   const theme = useTheme();
@@ -53,7 +54,9 @@ export function Order() {
               height: '100%',
               backgroundColor: '#F1F3F6',
             }}
-          ></Box>
+          >
+            <OrderSummary />
+          </Box>
         </Grid>
       </Grid>
     </Root>
