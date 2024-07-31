@@ -13,11 +13,16 @@ import {
 } from '@mui/material';
 import { LocationSearching } from '@mui/icons-material';
 
-export function BillingForm() {
+export function BillingForm({ onSubmit }) {
   const countries = ['United States', 'Canada', 'Mexico', 'Ukraine'];
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSubmit();
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <Stack
         direction="row"
         justifyContent="space-between"
@@ -87,7 +92,7 @@ export function BillingForm() {
           </FormControl>
         </Stack>
       </Stack>
-      <Button variant="contained" fullWidth={false}>
+      <Button type="submit" variant="contained" fullWidth={false}>
         Continue
       </Button>
     </form>

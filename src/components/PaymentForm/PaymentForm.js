@@ -10,9 +10,14 @@ import {
 import { grey } from '@mui/material/colors';
 import { ShieldTwoTone } from '@mui/icons-material';
 
-export function PaymentForm() {
+export function PaymentForm({ onSubmit }) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSubmit();
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <Typography
         variant="h5"
         color="primary.main"
@@ -71,7 +76,7 @@ export function PaymentForm() {
           </Grid>
         </Grid>
       </Stack>
-      <Button variant="contained" fullWidth={false}>
+      <Button type="submit" variant="contained" fullWidth={false}>
         Pay Securely
       </Button>
     </form>

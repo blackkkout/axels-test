@@ -8,11 +8,16 @@ import {
   Autocomplete,
 } from '@mui/material';
 
-export function ShippingForm() {
+export function ShippingForm({ onSubmit }) {
   const countries = ['United States', 'Canada', 'Mexico', 'Ukraine'];
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSubmit();
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <Typography
         variant="h5"
         color="primary.main"
@@ -71,7 +76,7 @@ export function ShippingForm() {
           </FormControl>
         </Stack>
       </Stack>
-      <Button variant="contained" fullWidth={false}>
+      <Button type="submit" variant="contained" fullWidth={false}>
         Continue
       </Button>
     </form>

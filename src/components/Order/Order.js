@@ -14,10 +14,26 @@ import { Root } from './Order.styles';
 import { OrderSummary } from '../OrderSummary/OrderSummary';
 import { OrderConfirmation } from '../OrderConfirmation/OrderConfirmation';
 import { ShippingForm } from '../ShippingForm/ShippingForm';
+import { BillingForm } from '../BillingForm/BillingForm';
+import { PaymentForm } from '../PaymentForm/PaymentForm';
+
+const pages = {
+  0: ShippingForm,
+  1: BillingForm,
+  2: PaymentForm,
+  3: OrderConfirmation,
+};
 
 export function Order() {
   const theme = useTheme();
-  const [isOrderConfirmed] = useState(true);
+  const [page, setPage] = useState(0);
+  const isOrderConfirmed = page === 3;
+
+  const PageComponent = pages[page];
+
+  const handleNextPage = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
 
   return (
     <Root>
@@ -53,7 +69,7 @@ export function Order() {
                   Payment
                 </Link>
               </Breadcrumbs>
-              <ShippingForm />
+              <PageComponent onSubmit={handleNextPage} />
             </Box>
           )}
         </Grid>
