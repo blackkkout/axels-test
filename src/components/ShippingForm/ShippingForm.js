@@ -27,11 +27,11 @@ export function ShippingForm() {
             <FormLabel sx={{ marginBottom: 1, color: 'primary.main' }}>
               Recipient
             </FormLabel>
-            <TextField label="Full Name" size="small" fullWidth />
+            <TextField placeholder="Full Name" size="small" fullWidth />
           </FormControl>
           <FormControl fullWidth>
             <TextField
-              label="Daytime Phone"
+              placeholder="Daytime Phone"
               size="small"
               fullWidth
               helperText="For delivery questions only"
@@ -43,18 +43,18 @@ export function ShippingForm() {
             <FormLabel sx={{ marginBottom: 1, color: 'primary.main' }}>
               Address
             </FormLabel>
-            <TextField label="Street Address" size="small" fullWidth />
+            <TextField placeholder="Street Address" size="small" fullWidth />
           </FormControl>
           <FormControl fullWidth>
             <TextField
-              label="Apt, Suite, Bldg, Gate Code. (optional)"
+              placeholder="Apt, Suite, Bldg, Gate Code. (optional)"
               size="small"
               fullWidth
             />
           </FormControl>
         </Stack>
         <FormControl fullWidth>
-          <TextField label="City" size="small" fullWidth />
+          <TextField placeholder="City" size="small" fullWidth />
         </FormControl>
         <Stack spacing={2} direction="row">
           <FormControl fullWidth>
@@ -62,12 +62,12 @@ export function ShippingForm() {
               disablePortal
               options={countries}
               renderInput={(params) => (
-                <TextField {...params} size="small" label="Country" />
+                <TextField {...params} size="small" placeholder="Country" />
               )}
             />
           </FormControl>
           <FormControl fullWidth>
-            <TextField label="ZIP" size="small" fullWidth />
+            <TextField placeholder="ZIP" size="small" fullWidth />
           </FormControl>
         </Stack>
       </Stack>
