@@ -48,11 +48,11 @@ export function OrderSummary() {
       <Stack
         direction="row"
         justifyContent="space-between"
-        alignItems="center"
+        alignItems=""
         marginBottom={1}
       >
         <Typography color="primary.main">Order Summary</Typography>
-        <Link color={grey[500]} fontSize={14}>
+        <Link color={grey[500]} fontSize={12}>
           edit order
         </Link>
       </Stack>
@@ -92,7 +92,7 @@ export function OrderSummary() {
         direction="row"
         justifyContent="space-between"
         marginTop={1}
-        fontSize={13}
+        fontSize={12}
       >
         <Typography color="primary.main" fontWeight={600} fontSize="inherit">
           Total

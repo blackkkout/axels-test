@@ -10,8 +10,8 @@ import { grey } from '@mui/material/colors';
 import { NavigateNextRounded } from '@mui/icons-material';
 
 import { Root } from './Order.styles';
-import { ShippingForm } from '../ShippingForm/ShippingForm';
 import { OrderSummary } from '../OrderSummary/OrderSummary';
+import { BillingForm } from '../BillingForm/BillingForm';
 
 export function Order() {
   const theme = useTheme();
@@ -45,16 +45,11 @@ export function Order() {
                 Payment
               </Link>
             </Breadcrumbs>
-            <ShippingForm />
+            <BillingForm />
           </Box>
         </Grid>
         <Grid item xs={5}>
-          <Box
-            sx={{
-              height: '100%',
-              backgroundColor: '#F1F3F6',
-            }}
-          >
+          <Box height="100%" bgcolor="#F1F3F6">
             <OrderSummary />
           </Box>
         </Grid>
