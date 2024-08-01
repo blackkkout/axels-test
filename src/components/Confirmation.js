@@ -1,6 +1,6 @@
 import { Link, Stack, Typography } from '@mui/material';
 
-export const OrderConfirmation = () => (
+export const Confirmation = () => (
   <Stack direction="column" gap={3}>
     <Typography variant="h5" color="primary.main">
       Thank you for your order!

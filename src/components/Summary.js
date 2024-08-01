@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import {
   Box,
+  CircularProgress,
   Divider,
   Link,
   List,
@@ -8,40 +10,24 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { OrderItem } from './OrderItem';
+import { Item } from './Item';
+import {
+  ordersActions,
+  ordersSelector,
+  ordersStatusSelector,
+} from '../redux/ducks/orders';
 
-export const OrderSummary = () => {
+export const Summary = () => {
   const theme = useTheme();
-  const orders = [
-    {
-      id: 1,
-      name: 'The Chelsea Boot',
-      price: '$235',
-      shape: 'black',
-      quantity: 1,
-      image:
-        'https://www.jackerwin.com/cdn/shop/products/EllisBlack_Profile_960x_crop_center.jpg?v=1673021220',
-    },
-    {
-      id: 2,
-      name: 'The Chelsea Boot',
-      price: '$235',
-      shape: 'black',
-      quantity: 1,
-      image:
-        'https://www.jackerwin.com/cdn/shop/products/EllisBlack_Profile_960x_crop_center.jpg?v=1673021220',
-    },
-    {
-      id: 3,
-      name: 'The Chelsea Boot',
-      price: '$235',
-      shape: 'black',
-      quantity: 1,
-      image:
-        'https://www.jackerwin.com/cdn/shop/products/EllisBlack_Profile_960x_crop_center.jpg?v=1673021220',
-    },
-  ];
+  const dispatch = useDispatch();
+  const orders = useSelector(ordersSelector);
+  const status = useSelector(ordersStatusSelector);
+
+  useEffect(() => {
+    dispatch(ordersActions.getData());
+  }, [dispatch]);
 
   return (
     <Box padding={theme.spacing(2, 2, 5, 1)}>
@@ -56,14 +42,20 @@ export const OrderSummary = () => {
           edit order
         </Link>
       </Stack>
-      <Stack spacing={1.5}>
-        {orders.map((order) => (
-          <div key={order.id}>
-            <OrderItem order={order} />
-            <Divider />
-          </div>
-        ))}
-      </Stack>
+      {status === 'loading' ? (
+        <Stack direction="row" justifyContent="center">
+          <CircularProgress />
+        </Stack>
+      ) : (
+        <Stack spacing={1.5}>
+          {orders.map((order) => (
+            <div key={order.id}>
+              <Item order={order} />
+              <Divider />
+            </div>
+          ))}
+        </Stack>
+      )}
       <Stack
         direction="row"
         justifyContent="space-between"

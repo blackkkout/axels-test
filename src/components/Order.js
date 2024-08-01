@@ -1,80 +1,81 @@
-import { useState } from 'react';
-import {
-  useTheme,
-  Box,
-  Grid,
-  Breadcrumbs,
-  Link,
-  Typography,
-} from '@mui/material';
-import { NavigateNextRounded } from '@mui/icons-material';
+import { useTheme, Box, Grid, Breadcrumbs, Link } from '@mui/material';
+import { Outlet } from 'react-router-dom';
+import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
 
 import { Root } from '../styled/Order';
-import { ShippingForm } from './ShippingForm';
-import { BillingForm } from './BillingForm';
-import { PaymentForm } from './PaymentForm';
-import { OrderSummary } from './OrderSummary';
-import { OrderConfirmation } from './OrderConfirmation';
-
-const pages = {
-  0: ShippingForm,
-  1: BillingForm,
-  2: PaymentForm,
-  3: OrderConfirmation,
-};
+import { NavLink } from './NavLink';
+import { Summary } from './Summary';
+import { Confirmation } from './Confirmation';
+import { useLocation } from 'react-router-dom';
 
 export const Order = () => {
   const theme = useTheme();
-  const [page, setPage] = useState(0);
-  const isOrderConfirmed = page === 3;
-
-  const PageComponent = pages[page];
-
-  const handleNextPage = () => {
-    setPage((prevPage) => prevPage + 1);
-  };
+  const location = useLocation();
 
   return (
     <Root>
       <Grid container height="100%">
         <Grid item md={7} sm={12} xs={12}>
-          {isOrderConfirmed ? (
+          {location.pathname === '/confirmation' ? (
             <Box padding={theme.spacing(9, 4, 5, 5)}>
-              <OrderConfirmation />
+              <Confirmation />
             </Box>
           ) : (
             <Box padding={theme.spacing(2, 4, 5, 4)}>
               <Breadcrumbs
                 aria-label="breadcrumb"
-                separator={<NavigateNextRounded fontSize="medium" />}
+                separator={<NavigateNextRoundedIcon fontSize="medium" />}
               >
-                <Typography color="primary.main" fontSize="small">
-                  Shipping
-                </Typography>
                 <Link
+                  component={NavLink}
                   underline="hover"
                   color="grey.400"
                   fontSize="small"
-                  href="#"
+                  to="/"
+                  sx={{
+                    '&.active': {
+                      color: 'primary.main',
+                    },
+                  }}
+                >
+                  Shipping
+                </Link>
+                <Link
+                  component={NavLink}
+                  underline="hover"
+                  color="grey.400"
+                  fontSize="small"
+                  to="/billing"
+                  sx={{
+                    '&.active': {
+                      color: 'primary.main',
+                    },
+                  }}
                 >
                   Billing
                 </Link>
                 <Link
+                  component={NavLink}
                   underline="hover"
                   color="grey.400"
                   fontSize="small"
-                  href="#"
+                  to="/payment"
+                  sx={{
+                    '&.active': {
+                      color: 'primary.main',
+                    },
+                  }}
                 >
                   Payment
                 </Link>
               </Breadcrumbs>
-              <PageComponent onSubmit={handleNextPage} />
+              <Outlet />
             </Box>
           )}
         </Grid>
         <Grid item md={5} sm={12} xs={12}>
           <Box height="100%" bgcolor="#F1F3F6">
-            <OrderSummary />
+            <Summary />
           </Box>
         </Grid>
       </Grid>
