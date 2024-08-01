@@ -8,14 +8,32 @@ import {
   Grid,
 } from '@mui/material';
 import ShieldTwoToneIcon from '@mui/icons-material/ShieldTwoTone';
+import { useFormik } from 'formik';
+import * as yup from 'yup';
+
+const validationSchema = yup.object().shape({
+  name: yup.string().required('Cardholder Name is required'),
+  number: yup.string().required('Card Number is required'),
+  exp: yup.string().required('Expiry Date is required'),
+  cvc: yup.number().required('Security Code is required'),
+});
 
 export const Payment = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      number: '',
+      exp: '',
+      cvc: '',
+    },
+    validationSchema,
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={formik.handleSubmit}>
       <Typography
         variant="h5"
         color="primary.main"
@@ -37,9 +55,15 @@ export const Payment = () => {
               Cardholder Name
             </FormLabel>
             <TextField
+              name="name"
               placeholder="Name as it appears on your card"
               size="small"
               fullWidth
+              value={formik.values.name}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.name && Boolean(formik.errors.name)}
+              helperText={formik.touched.name && formik.errors.name}
             />
           </FormControl>
         </Stack>
@@ -49,9 +73,15 @@ export const Payment = () => {
               Card Number
             </FormLabel>
             <TextField
+              name="number"
               placeholder="XXXX XXXX XXXX XXXX"
               size="small"
               fullWidth
+              value={formik.values.number}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.number && Boolean(formik.errors.number)}
+              helperText={formik.touched.number && formik.errors.number}
             />
           </FormControl>
         </Stack>
@@ -61,7 +91,17 @@ export const Payment = () => {
               <FormLabel sx={{ marginBottom: 1, color: 'primary.main' }}>
                 Expiry Date
               </FormLabel>
-              <TextField placeholder="MM / YY" size="small" fullWidth />
+              <TextField
+                name="exp"
+                placeholder="MM / YY"
+                size="small"
+                fullWidth
+                value={formik.values.exp}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                error={formik.touched.exp && Boolean(formik.errors.exp)}
+                helperText={formik.touched.exp && formik.errors.exp}
+              />
             </FormControl>
           </Grid>
           <Grid item xs={4}>
@@ -69,7 +109,16 @@ export const Payment = () => {
               <FormLabel sx={{ marginBottom: 1, color: 'primary.main' }}>
                 Security Code
               </FormLabel>
-              <TextField size="small" fullWidth />
+              <TextField
+                name="cvc"
+                size="small"
+                fullWidth
+                value={formik.values.cvc}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                error={formik.touched.cvc && Boolean(formik.errors.cvc)}
+                helperText={formik.touched.cvc && formik.errors.cvc}
+              />
             </FormControl>
           </Grid>
         </Grid>
