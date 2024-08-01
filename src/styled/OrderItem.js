@@ -1,5 +1,5 @@
 import { styled } from '@mui/material';
-import { grey } from '@mui/material/colors';
+import { palette } from './config';
 
 export const Image = styled('img')({
   width: '100%',
@@ -7,5 +7,5 @@ export const Image = styled('img')({
   objectFit: 'cover',
   borderWidth: 1,
   borderStyle: 'solid',
-  borderColor: grey[300],
+  borderColor: palette.grey[300],
 });

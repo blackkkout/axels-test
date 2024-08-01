@@ -8,10 +8,10 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
-import { grey } from '@mui/material/colors';
-import { OrderItem } from '../OrderItem/OrderItem';
 
-export function OrderSummary() {
+import { OrderItem } from './OrderItem';
+
+export const OrderSummary = () => {
   const theme = useTheme();
   const orders = [
     {
@@ -52,7 +52,7 @@ export function OrderSummary() {
         marginBottom={1}
       >
         <Typography color="primary.main">Order Summary</Typography>
-        <Link color={grey[500]} fontSize={12}>
+        <Link color="grey.500" fontSize={12}>
           edit order
         </Link>
       </Stack>
@@ -68,7 +68,7 @@ export function OrderSummary() {
         direction="row"
         justifyContent="space-between"
         fontSize={12}
-        color={grey[600]}
+        color="grey.600"
       >
         <List>
           <ListItem sx={{ padding: 0 }}>Subtotal</ListItem>
@@ -103,4 +103,4 @@ export function OrderSummary() {
       </Stack>
     </Box>
   );
-}
+};

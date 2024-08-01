@@ -7,10 +7,9 @@ import {
   TextField,
   Grid,
 } from '@mui/material';
-import { grey } from '@mui/material/colors';
 import { ShieldTwoTone } from '@mui/icons-material';
 
-export function PaymentForm({ onSubmit }) {
+export const PaymentForm = ({ onSubmit }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit();
@@ -29,7 +28,7 @@ export function PaymentForm({ onSubmit }) {
       <Stack spacing={2} marginBottom={2}>
         <Stack direction="row" alignItems="center">
           <ShieldTwoTone color="success" sx={{ marginRight: 1 }} />
-          <Typography color={grey[500]} fontSize={14}>
+          <Typography color="grey.500" fontSize={14}>
             This is a secure 128-bit SSL encrypted payment
           </Typography>
         </Stack>
@@ -81,4 +80,4 @@ export function PaymentForm({ onSubmit }) {
       </Button>
     </form>
   );
-}
+};

@@ -7,15 +7,14 @@ import {
   Link,
   Typography,
 } from '@mui/material';
-import { grey } from '@mui/material/colors';
 import { NavigateNextRounded } from '@mui/icons-material';
 
-import { Root } from './Order.styles';
-import { OrderSummary } from '../OrderSummary/OrderSummary';
-import { OrderConfirmation } from '../OrderConfirmation/OrderConfirmation';
-import { ShippingForm } from '../ShippingForm/ShippingForm';
-import { BillingForm } from '../BillingForm/BillingForm';
-import { PaymentForm } from '../PaymentForm/PaymentForm';
+import { Root } from '../styled/Order';
+import { ShippingForm } from './ShippingForm';
+import { BillingForm } from './BillingForm';
+import { PaymentForm } from './PaymentForm';
+import { OrderSummary } from './OrderSummary';
+import { OrderConfirmation } from './OrderConfirmation';
 
 const pages = {
   0: ShippingForm,
@@ -24,7 +23,7 @@ const pages = {
   3: OrderConfirmation,
 };
 
-export function Order() {
+export const Order = () => {
   const theme = useTheme();
   const [page, setPage] = useState(0);
   const isOrderConfirmed = page === 3;
@@ -38,7 +37,7 @@ export function Order() {
   return (
     <Root>
       <Grid container height="100%">
-        <Grid item xs={7}>
+        <Grid item md={7} sm={12} xs={12}>
           {isOrderConfirmed ? (
             <Box padding={theme.spacing(9, 4, 5, 5)}>
               <OrderConfirmation />
@@ -54,7 +53,7 @@ export function Order() {
                 </Typography>
                 <Link
                   underline="hover"
-                  color={grey[400]}
+                  color="grey.400"
                   fontSize="small"
                   href="#"
                 >
@@ -62,7 +61,7 @@ export function Order() {
                 </Link>
                 <Link
                   underline="hover"
-                  color={grey[400]}
+                  color="grey.400"
                   fontSize="small"
                   href="#"
                 >
@@ -73,7 +72,7 @@ export function Order() {
             </Box>
           )}
         </Grid>
-        <Grid item xs={5}>
+        <Grid item md={5} sm={12} xs={12}>
           <Box height="100%" bgcolor="#F1F3F6">
             <OrderSummary />
           </Box>
@@ -81,4 +80,4 @@ export function Order() {
       </Grid>
     </Root>
   );
-}
+};

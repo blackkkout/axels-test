@@ -6,14 +6,9 @@ import {
   Typography,
   TextField,
   Autocomplete,
-  InputAdornment,
-  IconButton,
-  OutlinedInput,
-  Link,
 } from '@mui/material';
-import { LocationSearching } from '@mui/icons-material';
 
-export function BillingForm({ onSubmit }) {
+export const ShippingForm = ({ onSubmit }) => {
   const countries = ['United States', 'Canada', 'Mexico', 'Ukraine'];
 
   const handleSubmit = (event) => {
@@ -23,36 +18,35 @@ export function BillingForm({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="flex-end"
+      <Typography
+        variant="h5"
+        color="primary.main"
         marginTop={3}
         marginBottom={2}
       >
-        <Typography variant="h5" color="primary.main">
-          Billing Information
-        </Typography>
-        <Link whiteSpace="nowrap" fontSize={12}>
-          Same as shipping
-        </Link>
-      </Stack>
+        Shipping Info
+      </Typography>
       <Stack spacing={2} marginBottom={2}>
         <Stack spacing={1}>
           <FormControl fullWidth>
             <FormLabel sx={{ marginBottom: 1, color: 'primary.main' }}>
-              Billing Contact
+              Recipient
             </FormLabel>
             <TextField placeholder="Full Name" size="small" fullWidth />
           </FormControl>
           <FormControl fullWidth>
-            <TextField placeholder="Email Address" size="small" fullWidth />
+            <TextField
+              placeholder="Daytime Phone"
+              size="small"
+              fullWidth
+              helperText="For delivery questions only"
+            />
           </FormControl>
         </Stack>
         <Stack spacing={1}>
           <FormControl fullWidth>
             <FormLabel sx={{ marginBottom: 1, color: 'primary.main' }}>
-              Billing Address
+              Address
             </FormLabel>
             <TextField placeholder="Street Address" size="small" fullWidth />
           </FormControl>
@@ -65,17 +59,7 @@ export function BillingForm({ onSubmit }) {
           </FormControl>
         </Stack>
         <FormControl fullWidth>
-          <OutlinedInput
-            size="small"
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton aria-label="get location" edge="end">
-                  <LocationSearching />
-                </IconButton>
-              </InputAdornment>
-            }
-            placeholder="City"
-          />
+          <TextField placeholder="City" size="small" fullWidth />
         </FormControl>
         <Stack spacing={2} direction="row">
           <FormControl fullWidth>
@@ -97,4 +81,4 @@ export function BillingForm({ onSubmit }) {
       </Button>
     </form>
   );
-}
+};
