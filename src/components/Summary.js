@@ -9,9 +9,9 @@ import {
   useTheme,
 } from '@mui/material';
 
-import { OrderItem } from './OrderItem';
+import { Item } from './Item';
 
-export const OrderSummary = () => {
+export const Summary = () => {
   const theme = useTheme();
   const orders = [
     {
@@ -59,7 +59,7 @@ export const OrderSummary = () => {
       <Stack spacing={1.5}>
         {orders.map((order) => (
           <div key={order.id}>
-            <OrderItem order={order} />
+            <Item order={order} />
             <Divider />
           </div>
         ))}

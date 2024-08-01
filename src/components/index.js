@@ -1,8 +1,7 @@
-export { App } from './App';
-export { BillingForm } from './BillingForm';
+export { Billing } from './Billing';
 export { Order } from './Order';
-export { OrderConfirmation } from './OrderConfirmation';
-export { OrderItem } from './OrderItem';
-export { OrderSummary } from './OrderSummary';
-export { PaymentForm } from './PaymentForm';
-export { ShippingForm } from './ShippingForm';
+export { Confirmation } from './Confirmation';
+export { Item } from './Item';
+export { Summary } from './Summary';
+export { Payment } from './Payment';
+export { Shipping } from './Shipping';

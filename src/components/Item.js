@@ -1,8 +1,8 @@
 import { Stack, Typography, Box } from '@mui/material';
 
-import { Image } from '../styled/OrderItem';
+import { Image } from '../styled/Item';
 
-export const OrderItem = ({ order }) => (
+export const Item = ({ order }) => (
   <Stack marginBottom={1} direction="row" justifyContent="space-between">
     <Stack direction="row">
       <Box width={50} height={50} marginRight={1}>
