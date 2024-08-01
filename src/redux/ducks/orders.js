@@ -45,3 +45,6 @@ export function* fetchOrders() {
     yield put(ordersActions.setStatus(_status.error));
   }
 }
+
+export const ordersSelector = (state) => state.orders.data;
+export const ordersStatusSelector = (state) => state.orders.status;

@@ -14,10 +14,10 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { Item } from './Item';
 import {
+  ordersActions,
   ordersSelector,
   ordersStatusSelector,
-} from '../redux/selectors/orders';
-import { ordersActions } from '../redux/ducks/orders';
+} from '../redux/ducks/orders';
 
 export const Summary = () => {
   const theme = useTheme();

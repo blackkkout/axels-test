@@ -1,5 +1,5 @@
 import { ThemeProvider, CssBaseline } from '@mui/material';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import { store } from './redux/store';
@@ -12,7 +12,7 @@ export const App = () => (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Root>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Order />}>
               <Route index element={<Shipping />} />
@@ -21,7 +21,7 @@ export const App = () => (
             </Route>
             <Route path="/confirmation" element={<Order />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </Root>
     </ThemeProvider>
   </Provider>

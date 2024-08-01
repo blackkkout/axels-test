@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { takeEvery } from 'redux-saga/effects';
 import createSagaMiddleware from 'redux-saga';
 
+import { fetchOrders, ordersActions } from './ducks/orders';
 import { ordersReducer } from './ducks/orders';
-import { rootSaga } from './rootSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];
@@ -16,3 +17,7 @@ export const store = configureStore({
 });
 
 sagaMiddleware.run(rootSaga);
+
+export function* rootSaga() {
+  yield takeEvery(ordersActions.getData, fetchOrders);
+}
