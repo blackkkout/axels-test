@@ -125,7 +125,6 @@ export const Billing = () => {
 
   useEffect(() => {
     if (!Object.values(debouncedFormikValues).every((value) => value === '')) {
-      console.log('oooops');
       localStorage.setItem('billing', JSON.stringify(debouncedFormikValues));
     }
   }, [debouncedFormikValues]);

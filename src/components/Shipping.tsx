@@ -110,7 +110,6 @@ export const Shipping = () => {
 
   useEffect(() => {
     if (!Object.values(debouncedFormikValues).every((value) => value === '')) {
-      console.log('oooops');
       localStorage.setItem('shipping', JSON.stringify(debouncedFormikValues));
     }
   }, [debouncedFormikValues]);

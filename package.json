@@ -2,7 +2,7 @@
   "name": "axels-test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://blackkkout.github.io/",
+  "homepage": "https://blackkkout.github.io/axels-test",
   "dependencies": {
     "@mui/icons-material": "^5.16.5",
     "@mui/material": "^5.16.5",
