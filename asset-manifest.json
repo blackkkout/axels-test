@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/axels-test/static/js/main.92371d63.js",
-    "static/js/163.2ad00631.chunk.js": "/axels-test/static/js/163.2ad00631.chunk.js",
+    "main.js": "/axels-test/static/js/main.ddf09150.js",
+    "static/js/163.93b82288.chunk.js": "/axels-test/static/js/163.93b82288.chunk.js",
     "index.html": "/axels-test/index.html",
-    "main.92371d63.js.map": "/axels-test/static/js/main.92371d63.js.map",
-    "163.2ad00631.chunk.js.map": "/axels-test/static/js/163.2ad00631.chunk.js.map"
+    "main.ddf09150.js.map": "/axels-test/static/js/main.ddf09150.js.map",
+    "163.93b82288.chunk.js.map": "/axels-test/static/js/163.93b82288.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.92371d63.js"
+    "static/js/main.ddf09150.js"
   ]
 }
