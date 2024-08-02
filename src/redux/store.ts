@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { takeEvery } from 'redux-saga/effects';
 import createSagaMiddleware from 'redux-saga';
 
-import { ordersReducer, getOrders, ordersActions } from './ducks/orders';
+import { ordersReducer, fetchOrders, ordersActions } from './ducks/orders';
 import {
   geolocationActions,
   geolocationReducer,
@@ -25,7 +25,7 @@ sagaMiddleware.run(rootSaga);
 
 export function* rootSaga() {
   yield takeEvery(geolocationActions.getGeolocation, getGeolocation);
-  yield takeEvery(ordersActions.getData, getOrders);
+  yield takeEvery(ordersActions.getData, fetchOrders);
 }
 
 export type RootState = ReturnType<typeof store.getState>;

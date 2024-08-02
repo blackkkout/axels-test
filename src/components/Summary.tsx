@@ -17,6 +17,7 @@ import {
   ordersActions,
   ordersSelector,
   ordersStatusSelector,
+  ordersSummarySelector,
 } from '../redux/ducks/orders';
 
 export const Summary = () => {
@@ -24,6 +25,7 @@ export const Summary = () => {
   const dispatch = useDispatch();
   const orders = useSelector(ordersSelector);
   const status = useSelector(ordersStatusSelector);
+  const summary = useSelector(ordersSummarySelector);
 
   useEffect(() => {
     dispatch(ordersActions.getData());
@@ -47,52 +49,62 @@ export const Summary = () => {
           <CircularProgress />
         </Stack>
       ) : (
-        <Stack spacing={1.5}>
-          {orders.map((order) => (
-            <div key={order.id}>
-              <Item order={order} />
-              <Divider />
-            </div>
-          ))}
-        </Stack>
+        <>
+          <Stack spacing={1.5}>
+            {orders.map((order) => (
+              <div key={order.id}>
+                <Item order={order} />
+                <Divider />
+              </div>
+            ))}
+          </Stack>
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            fontSize={12}
+            color="grey.600"
+          >
+            <List>
+              <ListItem sx={{ padding: 0 }}>Subtotal</ListItem>
+              <ListItem sx={{ padding: 0 }}>Shipping</ListItem>
+              <ListItem sx={{ padding: 0 }}>Taxes</ListItem>
+            </List>
+            <List>
+              <ListItem sx={{ padding: 0, justifyContent: 'flex-end' }}>
+                ${summary?.subtotal}
+              </ListItem>
+              <ListItem sx={{ padding: 0, justifyContent: 'flex-end' }}>
+                {!summary?.shipping ? 'Free' : summary?.shipping}
+              </ListItem>
+              <ListItem sx={{ padding: 0, justifyContent: 'flex-end' }}>
+                ${summary?.taxes}
+              </ListItem>
+            </List>
+          </Stack>
+          <Divider />
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            marginTop={1}
+            fontSize={12}
+          >
+            <Typography
+              color="primary.main"
+              fontWeight={600}
+              fontSize="inherit"
+            >
+              Total
+            </Typography>
+            <Typography
+              color="primary.main"
+              fontWeight={600}
+              fontSize="inherit"
+            >
+              ${summary?.subtotal! + summary?.shipping! + summary?.taxes!}
+            </Typography>
+          </Stack>
+        </>
       )}
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        fontSize={12}
-        color="grey.600"
-      >
-        <List>
-          <ListItem sx={{ padding: 0 }}>Subtotal</ListItem>
-          <ListItem sx={{ padding: 0 }}>Shipping</ListItem>
-          <ListItem sx={{ padding: 0 }}>Taxes</ListItem>
-        </List>
-        <List>
-          <ListItem sx={{ padding: 0, justifyContent: 'flex-end' }}>
-            $398
-          </ListItem>
-          <ListItem sx={{ padding: 0, justifyContent: 'flex-end' }}>
-            Free
-          </ListItem>
-          <ListItem sx={{ padding: 0, justifyContent: 'flex-end' }}>
-            $12.12
-          </ListItem>
-        </List>
-      </Stack>
-      <Divider />
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        marginTop={1}
-        fontSize={12}
-      >
-        <Typography color="primary.main" fontWeight={600} fontSize="inherit">
-          Total
-        </Typography>
-        <Typography color="primary.main" fontWeight={600} fontSize="inherit">
-          $410.12
-        </Typography>
-      </Stack>
     </Box>
   );
 };

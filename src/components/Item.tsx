@@ -25,7 +25,7 @@ export const Item = ({ order }: ItemProps) => (
       </Stack>
     </Stack>
     <Typography fontSize={11} color="grey.600">
-      {order.price}
+      ${order.price}
     </Typography>
   </Stack>
 );

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Button,
   FormControl,
@@ -13,6 +13,7 @@ import {
   OutlinedInput,
   Link,
   CircularProgress,
+  Alert,
 } from '@mui/material';
 import { LocationSearching } from '@mui/icons-material';
 import { useFormik } from 'formik';
@@ -22,6 +23,8 @@ import * as yup from 'yup';
 
 import { getAddress } from '../api/address';
 import { geolocationSelector } from '../redux/ducks/geolocation';
+import { useDebounce } from '@uidotdev/usehooks';
+import { postBilling } from '../api/orders';
 
 const validationSchema = yup.object().shape({
   fullName: yup.string().required('Full Name is required'),
@@ -36,10 +39,11 @@ const validationSchema = yup.object().shape({
   zip: yup.string().required('ZIP is required'),
 });
 
-export const Billing = () => {
-  const navigate = useNavigate();
-  const [isAddressLoading, setIsAddressLoading] = useState(false);
+export type BillingFormValues = yup.InferType<typeof validationSchema>;
 
+export const Billing = () => {
+  const [error, setError] = useState<null | string>(null);
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       fullName: '',
@@ -51,14 +55,24 @@ export const Billing = () => {
       zip: '',
     },
     validationSchema,
-    onSubmit: (_) => {
-      navigate('/payment');
+    onSubmit: async (values) => {
+      try {
+        const data = await postBilling(values);
+        if (data?.success) {
+          navigate('/payment');
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          setError(error.message);
+        }
+      }
     },
   });
 
-  const countries = ['United States', 'Canada', 'Mexico', 'Ukraine'];
-
+  const [isAddressLoading, setIsAddressLoading] = useState(false);
   const coords = useSelector(geolocationSelector);
+
+  const countries = ['United States', 'Canada', 'Mexico', 'Ukraine'];
 
   const handleGetAddress = async () => {
     if (coords && coords.latitude && coords.longitude) {
@@ -82,6 +96,40 @@ export const Billing = () => {
     }
   };
 
+  const handleGetShipping = () => {
+    const values = JSON.parse(localStorage.getItem('shipping') || '{}');
+
+    formik.setFieldValue('fullName', values.fullName || '');
+    formik.setFieldValue('streetAddress', values.streetAddress || '');
+    formik.setFieldValue('apt', values.apt || '');
+    formik.setFieldValue('city', values.city || values.town || '');
+    formik.setFieldValue('country', values.country || '');
+    formik.setFieldValue('zip', values.zip || '');
+  };
+
+  const debouncedFormikValues = useDebounce(formik.values, 1000);
+
+  useEffect(() => {
+    const values = JSON.parse(localStorage.getItem('billing') || '{}');
+    formik.setValues({
+      fullName: values.fullName || '',
+      email: values.email || '',
+      streetAddress: values.streetAddress || '',
+      apt: values.apt || '',
+      city: values.city || values.town || '',
+      country: values.country || '',
+      zip: values.zip || '',
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (!Object.values(debouncedFormikValues).every((value) => value === '')) {
+      console.log('oooops');
+      localStorage.setItem('billing', JSON.stringify(debouncedFormikValues));
+    }
+  }, [debouncedFormikValues]);
+
   return (
     <form onSubmit={formik.handleSubmit}>
       <Stack
@@ -94,11 +142,17 @@ export const Billing = () => {
         <Typography variant="h5" color="primary.main">
           Billing Information
         </Typography>
-        <Link whiteSpace="nowrap" fontSize={12}>
+        <Link
+          whiteSpace="nowrap"
+          fontSize={12}
+          sx={{ cursor: 'pointer' }}
+          onClick={handleGetShipping}
+        >
           Same as shipping
         </Link>
       </Stack>
       <Stack spacing={2} marginBottom={2}>
+        {error && <Alert severity="error">{error}</Alert>}
         <Stack spacing={1}>
           <FormControl fullWidth>
             <FormLabel sx={{ marginBottom: 1, color: 'primary.main' }}>

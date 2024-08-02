@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import {
   Button,
   FormControl,
@@ -6,19 +8,26 @@ import {
   Typography,
   TextField,
   Grid,
+  Alert,
 } from '@mui/material';
 import ShieldTwoToneIcon from '@mui/icons-material/ShieldTwoTone';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 
+import { postPayment } from '../api/orders';
+
 const validationSchema = yup.object().shape({
   name: yup.string().required('Cardholder Name is required'),
   number: yup.string().required('Card Number is required'),
   exp: yup.string().required('Expiry Date is required'),
-  cvc: yup.number().required('Security Code is required'),
+  cvc: yup.string().required('Security Code is required'),
 });
 
+export type PaymentFormValues = yup.InferType<typeof validationSchema>;
+
 export const Payment = () => {
+  const [error, setError] = useState<null | string>(null);
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -27,8 +36,17 @@ export const Payment = () => {
       cvc: '',
     },
     validationSchema,
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values) => {
+      try {
+        const data = await postPayment(values);
+        if (data?.success) {
+          navigate('/confirmation');
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          setError(error.message);
+        }
+      }
     },
   });
 
@@ -49,6 +67,7 @@ export const Payment = () => {
             This is a secure 128-bit SSL encrypted payment
           </Typography>
         </Stack>
+        {error && <Alert severity="error">{error}</Alert>}
         <Stack spacing={1}>
           <FormControl fullWidth>
             <FormLabel sx={{ marginBottom: 1, color: 'primary.main' }}>

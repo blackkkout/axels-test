@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LocationSearching } from '@mui/icons-material';
 import {
   Button,
@@ -13,14 +13,17 @@ import {
   InputAdornment,
   CircularProgress,
   OutlinedInput,
+  Alert,
 } from '@mui/material';
 import { useFormik } from 'formik';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useDebounce } from '@uidotdev/usehooks';
 import * as yup from 'yup';
 
 import { geolocationSelector } from '../redux/ducks/geolocation';
 import { getAddress } from '../api/address';
+import { postShipping } from '../api/orders';
 
 const validationSchema = yup.object().shape({
   fullName: yup.string().required('Full Name is required'),
@@ -32,9 +35,11 @@ const validationSchema = yup.object().shape({
   zip: yup.string().required('ZIP is required'),
 });
 
+export type ShippingFormValues = yup.InferType<typeof validationSchema>;
+
 export const Shipping = () => {
+  const [error, setError] = useState<null | string>(null);
   const navigate = useNavigate();
-  const [isAddressLoading, setIsAddressLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
       fullName: '',
@@ -46,10 +51,21 @@ export const Shipping = () => {
       zip: '',
     },
     validationSchema,
-    onSubmit: (_) => {
-      navigate('/billing');
+    onSubmit: async (values) => {
+      try {
+        const data = await postShipping(values);
+        if (data?.success) {
+          navigate('/billing');
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          setError(error.message);
+        }
+      }
     },
   });
+
+  const [isAddressLoading, setIsAddressLoading] = useState(false);
   const coords = useSelector(geolocationSelector);
 
   const handleGetAddress = async () => {
@@ -76,6 +92,29 @@ export const Shipping = () => {
 
   const countries = ['United States', 'Canada', 'Mexico', 'Ukraine'];
 
+  const debouncedFormikValues = useDebounce(formik.values, 1000);
+
+  useEffect(() => {
+    const values = JSON.parse(localStorage.getItem('shipping') || '{}');
+    formik.setValues({
+      fullName: values.fullName || '',
+      daytimePhone: values.daytimePhone || '',
+      streetAddress: values.streetAddress || '',
+      apt: values.apt || '',
+      city: values.city || values.town || '',
+      country: values.country || '',
+      zip: values.zip || '',
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (!Object.values(debouncedFormikValues).every((value) => value === '')) {
+      console.log('oooops');
+      localStorage.setItem('shipping', JSON.stringify(debouncedFormikValues));
+    }
+  }, [debouncedFormikValues]);
+
   return (
     <form onSubmit={formik.handleSubmit}>
       <Typography
@@ -87,6 +126,7 @@ export const Shipping = () => {
         Shipping Info
       </Typography>
       <Stack spacing={2} marginBottom={2}>
+        {error && <Alert severity="error">{error}</Alert>}
         <Stack spacing={1}>
           <FormControl fullWidth>
             <FormLabel sx={{ marginBottom: 1, color: 'primary.main' }}>
