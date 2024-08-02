@@ -1,3 +1,4 @@
+import { LocationSearching } from '@mui/icons-material';
 import {
   Button,
   FormControl,
@@ -6,6 +7,10 @@ import {
   Typography,
   TextField,
   Autocomplete,
+  FormHelperText,
+  IconButton,
+  InputAdornment,
+  OutlinedInput,
 } from '@mui/material';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -124,17 +129,27 @@ export const Shipping = () => {
           </FormControl>
         </Stack>
         <FormControl fullWidth>
-          <TextField
+          <OutlinedInput
             name="city"
-            placeholder="City"
             size="small"
-            fullWidth
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton aria-label="get location" edge="end">
+                  <LocationSearching />
+                </IconButton>
+              </InputAdornment>
+            }
+            placeholder="City"
             value={formik.values.city}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             error={formik.touched.city && Boolean(formik.errors.city)}
-            helperText={formik.touched.city && formik.errors.city}
           />
+          {formik.touched.city && formik.errors.city && (
+            <FormHelperText sx={{ color: 'error.main' }}>
+              {formik.errors.city}
+            </FormHelperText>
+          )}
         </FormControl>
         <Stack spacing={2} direction="row">
           <FormControl fullWidth>

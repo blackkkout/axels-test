@@ -42,7 +42,7 @@ export const ordersActions = {
   getData: createAction(`${ordersSlice.name}/getData`),
   setStatus: ordersSlice.actions.setStatus,
   setData: ordersSlice.actions.setData,
-};
+} as const;
 export const ordersReducer = ordersSlice.reducer;
 
 export function* getOrders(): Generator<any, void, any> {

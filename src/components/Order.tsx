@@ -1,16 +1,24 @@
+import { useEffect } from 'react';
 import { useTheme, Box, Grid, Breadcrumbs, Link } from '@mui/material';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
 import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
 
 import { Root } from '../styled/Order';
 import { NavLink } from './NavLink';
 import { Summary } from './Summary';
 import { Confirmation } from './Confirmation';
-import { useLocation } from 'react-router-dom';
+import { geolocationActions } from '../redux/ducks/geolocation';
 
 export const Order = () => {
   const theme = useTheme();
   const location = useLocation();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(geolocationActions.getGeolocation());
+  }, [dispatch]);
 
   return (
     <Root>
