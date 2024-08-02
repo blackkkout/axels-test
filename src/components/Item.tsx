@@ -1,8 +1,13 @@
 import { Stack, Typography, Box } from '@mui/material';
 
 import { Image } from '../styled/Item';
+import { Order } from '../types/order';
 
-export const Item = ({ order }) => (
+interface ItemProps {
+  order: Order;
+}
+
+export const Item = ({ order }: ItemProps) => (
   <Stack marginBottom={1} direction="row" justifyContent="space-between">
     <Stack direction="row">
       <Box width={50} height={50} marginRight={1}>
