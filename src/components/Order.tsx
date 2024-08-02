@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useTheme, Box, Grid, Breadcrumbs, Link } from '@mui/material';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
 import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
 
 import { Root } from '../styled/Order';

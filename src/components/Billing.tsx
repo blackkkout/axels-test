@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Button,
   FormControl,
@@ -11,10 +12,16 @@ import {
   FormHelperText,
   OutlinedInput,
   Link,
+  CircularProgress,
 } from '@mui/material';
 import { LocationSearching } from '@mui/icons-material';
 import { useFormik } from 'formik';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
+
+import { getAddress } from '../api/address';
+import { geolocationSelector } from '../redux/ducks/geolocation';
 
 const validationSchema = yup.object().shape({
   fullName: yup.string().required('Full Name is required'),
@@ -30,6 +37,9 @@ const validationSchema = yup.object().shape({
 });
 
 export const Billing = () => {
+  const navigate = useNavigate();
+  const [isAddressLoading, setIsAddressLoading] = useState(false);
+
   const formik = useFormik({
     initialValues: {
       fullName: '',
@@ -41,12 +51,36 @@ export const Billing = () => {
       zip: '',
     },
     validationSchema,
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: (_) => {
+      navigate('/payment');
     },
   });
 
   const countries = ['United States', 'Canada', 'Mexico', 'Ukraine'];
+
+  const coords = useSelector(geolocationSelector);
+
+  const handleGetAddress = async () => {
+    if (coords && coords.latitude && coords.longitude) {
+      try {
+        setIsAddressLoading(true);
+        const data = await getAddress(coords.latitude, coords.longitude);
+
+        formik.setFieldValue('streetAddress', data.address.road || '');
+        formik.setFieldValue('apt', data.address.house_number || '');
+        formik.setFieldValue(
+          'city',
+          data.address.city || data.address.town || '',
+        );
+        formik.setFieldValue('country', data.address.country || '');
+        formik.setFieldValue('zip', data.address.postcode || '');
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsAddressLoading(false);
+      }
+    }
+  };
 
   return (
     <form onSubmit={formik.handleSubmit}>
@@ -138,8 +172,17 @@ export const Billing = () => {
             size="small"
             endAdornment={
               <InputAdornment position="end">
-                <IconButton aria-label="get location" edge="end">
-                  <LocationSearching />
+                <IconButton
+                  aria-label="get location"
+                  edge="end"
+                  onClick={handleGetAddress}
+                  disabled={isAddressLoading || !coords}
+                >
+                  {isAddressLoading ? (
+                    <CircularProgress size={24} />
+                  ) : (
+                    <LocationSearching />
+                  )}
                 </IconButton>
               </InputAdornment>
             }
@@ -158,8 +201,10 @@ export const Billing = () => {
         <Stack spacing={2} direction="row">
           <FormControl fullWidth>
             <Autocomplete
+              freeSolo
               disablePortal
               options={countries}
+              value={formik.values.country}
               getOptionLabel={(option) => option}
               onChange={(_, value) => formik.setFieldValue('country', value)}
               renderInput={(params) => (
