@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import { LocationSearching } from '@mui/icons-material';
 import {
   Button,
   FormControl,
@@ -6,22 +8,26 @@ import {
   Typography,
   TextField,
   Autocomplete,
-  InputAdornment,
-  IconButton,
   FormHelperText,
+  IconButton,
+  InputAdornment,
+  CircularProgress,
   OutlinedInput,
-  Link,
+  Alert,
 } from '@mui/material';
-import { LocationSearching } from '@mui/icons-material';
 import { useFormik } from 'formik';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useDebounce } from '@uidotdev/usehooks';
 import * as yup from 'yup';
+
+import { geolocationSelector } from '../redux/ducks/geolocation';
+import { getAddress } from '../api/address';
+import { postShipping } from '../api/orders';
 
 const validationSchema = yup.object().shape({
   fullName: yup.string().required('Full Name is required'),
-  email: yup
-    .string()
-    .email('Email must be a valid email')
-    .required('Email Address is required'),
+  daytimePhone: yup.string().required('Daytime Phone is required'),
   streetAddress: yup.string().required('Street Address is required'),
   apt: yup.string(),
   city: yup.string().required('City is required'),
@@ -29,11 +35,15 @@ const validationSchema = yup.object().shape({
   zip: yup.string().required('ZIP is required'),
 });
 
-export const Billing = () => {
+export type ShippingFormValues = yup.InferType<typeof validationSchema>;
+
+export const Shipping = () => {
+  const [error, setError] = useState<null | string>(null);
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       fullName: '',
-      email: '',
+      daytimePhone: '',
       streetAddress: '',
       apt: '',
       city: '',
@@ -41,34 +51,85 @@ export const Billing = () => {
       zip: '',
     },
     validationSchema,
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values) => {
+      try {
+        const data = await postShipping(values);
+        if (data?.success) {
+          navigate('/billing');
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          setError(error.message);
+        }
+      }
     },
   });
 
+  const [isAddressLoading, setIsAddressLoading] = useState(false);
+  const coords = useSelector(geolocationSelector);
+
+  const handleGetAddress = async () => {
+    if (coords && coords.latitude && coords.longitude) {
+      try {
+        setIsAddressLoading(true);
+        const data = await getAddress(coords.latitude, coords.longitude);
+
+        formik.setFieldValue('streetAddress', data.address.road || '');
+        formik.setFieldValue('apt', data.address.house_number || '');
+        formik.setFieldValue(
+          'city',
+          data.address.city || data.address.town || '',
+        );
+        formik.setFieldValue('country', data.address.country || '');
+        formik.setFieldValue('zip', data.address.postcode || '');
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsAddressLoading(false);
+      }
+    }
+  };
+
   const countries = ['United States', 'Canada', 'Mexico', 'Ukraine'];
+
+  const debouncedFormikValues = useDebounce(formik.values, 1000);
+
+  useEffect(() => {
+    const values = JSON.parse(localStorage.getItem('shipping') || '{}');
+    formik.setValues({
+      fullName: values.fullName || '',
+      daytimePhone: values.daytimePhone || '',
+      streetAddress: values.streetAddress || '',
+      apt: values.apt || '',
+      city: values.city || values.town || '',
+      country: values.country || '',
+      zip: values.zip || '',
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (!Object.values(debouncedFormikValues).every((value) => value === '')) {
+      localStorage.setItem('shipping', JSON.stringify(debouncedFormikValues));
+    }
+  }, [debouncedFormikValues]);
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="flex-end"
+      <Typography
+        variant="h5"
+        color="primary.main"
         marginTop={3}
         marginBottom={2}
       >
-        <Typography variant="h5" color="primary.main">
-          Billing Information
-        </Typography>
-        <Link whiteSpace="nowrap" fontSize={12}>
-          Same as shipping
-        </Link>
-      </Stack>
+        Shipping Info
+      </Typography>
       <Stack spacing={2} marginBottom={2}>
+        {error && <Alert severity="error">{error}</Alert>}
         <Stack spacing={1}>
           <FormControl fullWidth>
             <FormLabel sx={{ marginBottom: 1, color: 'primary.main' }}>
-              Billing Contact
+              Recipient
             </FormLabel>
             <TextField
               name="fullName"
@@ -84,22 +145,28 @@ export const Billing = () => {
           </FormControl>
           <FormControl fullWidth>
             <TextField
-              name="email"
-              placeholder="Email Address"
+              name="daytimePhone"
+              placeholder="Daytime Phone"
               size="small"
               fullWidth
-              value={formik.values.email}
+              value={formik.values.daytimePhone}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={formik.touched.email && Boolean(formik.errors.email)}
-              helperText={formik.touched.email && formik.errors.email}
+              error={
+                formik.touched.daytimePhone &&
+                Boolean(formik.errors.daytimePhone)
+              }
+              helperText={
+                (formik.touched.daytimePhone && formik.errors.daytimePhone) ||
+                'For delivery questions only'
+              }
             />
           </FormControl>
         </Stack>
         <Stack spacing={1}>
           <FormControl fullWidth>
             <FormLabel sx={{ marginBottom: 1, color: 'primary.main' }}>
-              Billing Address
+              Address
             </FormLabel>
             <TextField
               name="streetAddress"
@@ -138,8 +205,17 @@ export const Billing = () => {
             size="small"
             endAdornment={
               <InputAdornment position="end">
-                <IconButton aria-label="get location" edge="end">
-                  <LocationSearching />
+                <IconButton
+                  aria-label="get location"
+                  edge="end"
+                  onClick={handleGetAddress}
+                  disabled={isAddressLoading || !coords}
+                >
+                  {isAddressLoading ? (
+                    <CircularProgress size={24} />
+                  ) : (
+                    <LocationSearching />
+                  )}
                 </IconButton>
               </InputAdornment>
             }
@@ -158,8 +234,10 @@ export const Billing = () => {
         <Stack spacing={2} direction="row">
           <FormControl fullWidth>
             <Autocomplete
+              freeSolo
               disablePortal
               options={countries}
+              value={formik.values.country}
               getOptionLabel={(option) => option}
               onChange={(_, value) => formik.setFieldValue('country', value)}
               renderInput={(params) => (
