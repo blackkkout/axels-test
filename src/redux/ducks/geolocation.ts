@@ -87,10 +87,7 @@ export function* getGeolocation(): Generator<any, void, GeolocationPosition> {
   } catch (error) {
     if (error instanceof GeolocationPositionError) {
       yield put(geolocationActions.setError(error.message));
-    } else {
-      yield put(geolocationActions.setError('An unknown error occurred'));
     }
-    console.error(error);
   }
 }
 
@@ -98,6 +95,5 @@ export const geolocationSelector = (
   state: RootState,
 ): SerializableGeolocationPosition['coords'] | null =>
   state.geolocation.position?.coords ?? null;
-
 export const geolocationErrorSelector = (state: RootState): string | null =>
   state.geolocation.error;

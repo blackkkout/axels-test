@@ -15,15 +15,15 @@ import {
   CircularProgress,
   Alert,
 } from '@mui/material';
-import { LocationSearching } from '@mui/icons-material';
 import { useFormik } from 'formik';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useDebounce } from '@uidotdev/usehooks';
+import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
 import * as yup from 'yup';
 
 import { getAddress } from '../api/address';
 import { geolocationSelector } from '../redux/ducks/geolocation';
-import { useDebounce } from '@uidotdev/usehooks';
 import { postBilling } from '../api/orders';
 
 const validationSchema = yup.object().shape({
@@ -111,6 +111,7 @@ export const Billing = () => {
 
   useEffect(() => {
     const values = JSON.parse(localStorage.getItem('billing') || '{}');
+
     formik.setValues({
       fullName: values.fullName || '',
       email: values.email || '',
@@ -234,7 +235,7 @@ export const Billing = () => {
                   {isAddressLoading ? (
                     <CircularProgress size={24} />
                   ) : (
-                    <LocationSearching />
+                    <LocationSearchingIcon />
                   )}
                 </IconButton>
               </InputAdornment>
