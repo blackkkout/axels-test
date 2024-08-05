@@ -1,7 +1,7 @@
 import { createAction, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { put, call } from 'redux-saga/effects';
 
-import { RootState } from '../store';
+import { RootState } from '../../store';
 
 interface SerializableGeolocationPosition {
   coords: {
@@ -16,7 +16,7 @@ interface SerializableGeolocationPosition {
   timestamp: number;
 }
 
-const requestGeolocation = async (): Promise<GeolocationPosition> => {
+export const requestGeolocation = async (): Promise<GeolocationPosition> => {
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -29,7 +29,7 @@ const requestGeolocation = async (): Promise<GeolocationPosition> => {
   });
 };
 
-const serializeGeolocationPosition = (
+export const serializeGeolocationPosition = (
   position: GeolocationPosition,
 ): SerializableGeolocationPosition => ({
   coords: {
@@ -44,7 +44,7 @@ const serializeGeolocationPosition = (
   timestamp: position.timestamp,
 });
 
-type GeolocationState = {
+export type GeolocationState = {
   position: SerializableGeolocationPosition | null;
   error: string | null;
 };
@@ -86,6 +86,9 @@ export function* getGeolocation(): Generator<any, void, GeolocationPosition> {
     yield put(geolocationActions.setGeolocation(serializablePosition));
   } catch (error) {
     if (error instanceof GeolocationPositionError) {
+      yield put(geolocationActions.setError(error.message));
+    }
+    if (error instanceof Error) {
       yield put(geolocationActions.setError(error.message));
     }
   }

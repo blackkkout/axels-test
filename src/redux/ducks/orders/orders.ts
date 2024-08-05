@@ -2,11 +2,11 @@ import { createAction, PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 import { put } from 'redux-saga/effects';
 
-import { getOrders } from '../../api/orders';
-import { Order } from '../../types/order';
-import { RootState } from '../store';
+import { getOrders } from '../../../api/orders';
+import { Order } from '../../../types/order';
+import { RootState } from '../../store';
 
-const _status = {
+export const _status = {
   idle: 'idle',
   loading: 'loading',
   success: 'success',
@@ -21,7 +21,7 @@ interface Summary {
   taxes: number;
 }
 
-interface OrdersState {
+export interface OrdersState {
   data: Order[];
   status: Status;
   summary: Summary | null;
@@ -69,11 +69,14 @@ export function* fetchOrders(): Generator<any, void, any> {
   }
 }
 
-function calculateSummary(orders: Order[]): Summary {
+export function calculateSummary(orders: Order[]): Summary {
   return {
-    subtotal: orders.reduce((acc, order) => acc + order.price, 0),
+    subtotal: orders.reduce(
+      (acc, order) => acc + order.price * order.quantity,
+      0,
+    ),
     shipping: 0,
-    taxes: orders.length * 0.25,
+    taxes: orders.length * 1.25,
   };
 }
 
