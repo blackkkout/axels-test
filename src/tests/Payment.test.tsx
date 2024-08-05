@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { Billing } from './Billing';
+import { Payment } from '../components/Payment';
 
 afterEach(() => {
   jest.resetAllMocks();
@@ -8,19 +8,12 @@ afterEach(() => {
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useParams: () => jest.fn(),
   useNavigate: () => jest.fn(),
 }));
 
-jest.mock('react-redux', () => ({
-  ...jest.requireActual('react-redux'),
-  useDispatch: () => jest.fn(),
-  useSelector: () => jest.fn(),
-}));
-
-describe('Billing', () => {
+describe('Payment', () => {
   it('should take a snapshot', () => {
-    const view = render(<Billing />);
+    const view = render(<Payment />);
     expect(view).toMatchSnapshot();
   });
 });

@@ -1,7 +1,7 @@
 import { Stack, Typography, Box } from '@mui/material';
 
-import { Image } from '../../styled/Item';
-import { Order } from '../../types/order';
+import { Image } from '../styled/Item';
+import { Order } from '../types/order';
 
 interface ItemProps {
   order: Order;

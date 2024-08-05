@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
-import { Shipping } from '../Shipping/Shipping';
-import { Confirmation } from '../Confirmation/Confirmation';
+import { Shipping } from '../components/Shipping';
+import { Confirmation } from '../components/Confirmation';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),

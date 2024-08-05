@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { Item } from './Item';
+import { Item } from '../components/Item';
 
 describe('Item', () => {
   it('should take a snapshot', () => {

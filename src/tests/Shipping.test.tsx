@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { Shipping } from './Shipping';
+import { Shipping } from '../components/Shipping';
 
 afterEach(() => {
   jest.resetAllMocks();

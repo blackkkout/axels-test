@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { LocationSearching } from '@mui/icons-material';
 import {
   Button,
   FormControl,
@@ -7,31 +8,26 @@ import {
   Typography,
   TextField,
   Autocomplete,
-  InputAdornment,
-  IconButton,
   FormHelperText,
-  OutlinedInput,
-  Link,
+  IconButton,
+  InputAdornment,
   CircularProgress,
+  OutlinedInput,
   Alert,
 } from '@mui/material';
 import { useFormik } from 'formik';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
 import * as yup from 'yup';
 
-import { getAddress } from '../../api/address';
-import { geolocationSelector } from '../../redux/ducks/geolocation/geolocation';
-import { postBilling } from '../../api/orders';
-import { useDebounce } from '../../hooks/useDebounce';
+import { geolocationSelector } from '../redux/ducks/geolocation/geolocation';
+import { getAddress } from '../api/address';
+import { postShipping } from '../api/orders';
+import { useDebounce } from '../hooks/useDebounce';
 
 const validationSchema = yup.object().shape({
   fullName: yup.string().required('Full Name is required'),
-  email: yup
-    .string()
-    .email('Email must be a valid email')
-    .required('Email Address is required'),
+  daytimePhone: yup.string().required('Daytime Phone is required'),
   streetAddress: yup.string().required('Street Address is required'),
   apt: yup.string(),
   city: yup.string().required('City is required'),
@@ -39,15 +35,15 @@ const validationSchema = yup.object().shape({
   zip: yup.string().required('ZIP is required'),
 });
 
-export type BillingFormValues = yup.InferType<typeof validationSchema>;
+export type ShippingFormValues = yup.InferType<typeof validationSchema>;
 
-export const Billing = () => {
+export const Shipping = () => {
   const [error, setError] = useState<null | string>(null);
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       fullName: '',
-      email: '',
+      daytimePhone: '',
       streetAddress: '',
       apt: '',
       city: '',
@@ -57,9 +53,9 @@ export const Billing = () => {
     validationSchema,
     onSubmit: async (values) => {
       try {
-        const data = await postBilling(values);
+        const data = await postShipping(values);
         if (data?.success) {
-          navigate('/payment');
+          navigate('/billing');
         }
       } catch (error) {
         if (error instanceof Error) {
@@ -71,8 +67,6 @@ export const Billing = () => {
 
   const [isAddressLoading, setIsAddressLoading] = useState(false);
   const coords = useSelector(geolocationSelector);
-
-  const countries = ['United States', 'Canada', 'Mexico', 'Ukraine'];
 
   const handleGetAddress = async () => {
     if (coords && coords.latitude && coords.longitude) {
@@ -96,25 +90,15 @@ export const Billing = () => {
     }
   };
 
-  const handleGetShipping = () => {
-    const values = JSON.parse(localStorage.getItem('shipping') || '{}');
-
-    formik.setFieldValue('fullName', values.fullName || '');
-    formik.setFieldValue('streetAddress', values.streetAddress || '');
-    formik.setFieldValue('apt', values.apt || '');
-    formik.setFieldValue('city', values.city || values.town || '');
-    formik.setFieldValue('country', values.country || '');
-    formik.setFieldValue('zip', values.zip || '');
-  };
+  const countries = ['United States', 'Canada', 'Mexico', 'Ukraine'];
 
   const debouncedFormikValues = useDebounce(formik.values, 1000);
 
   useEffect(() => {
-    const values = JSON.parse(localStorage.getItem('billing') || '{}');
-
+    const values = JSON.parse(localStorage.getItem('shipping') || '{}');
     formik.setValues({
       fullName: values.fullName || '',
-      email: values.email || '',
+      daytimePhone: values.daytimePhone || '',
       streetAddress: values.streetAddress || '',
       apt: values.apt || '',
       city: values.city || values.town || '',
@@ -126,37 +110,26 @@ export const Billing = () => {
 
   useEffect(() => {
     if (!Object.values(debouncedFormikValues).every((value) => value === '')) {
-      localStorage.setItem('billing', JSON.stringify(debouncedFormikValues));
+      localStorage.setItem('shipping', JSON.stringify(debouncedFormikValues));
     }
   }, [debouncedFormikValues]);
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="flex-end"
+      <Typography
+        variant="h5"
+        color="primary.main"
         marginTop={3}
         marginBottom={2}
       >
-        <Typography variant="h5" color="primary.main">
-          Billing Information
-        </Typography>
-        <Link
-          whiteSpace="nowrap"
-          fontSize={12}
-          sx={{ cursor: 'pointer' }}
-          onClick={handleGetShipping}
-        >
-          Same as shipping
-        </Link>
-      </Stack>
+        Shipping Info
+      </Typography>
       <Stack spacing={2} marginBottom={2}>
         {error && <Alert severity="error">{error}</Alert>}
         <Stack spacing={1}>
           <FormControl fullWidth>
             <FormLabel sx={{ marginBottom: 1, color: 'primary.main' }}>
-              Billing Contact
+              Recipient
             </FormLabel>
             <TextField
               name="fullName"
@@ -172,22 +145,28 @@ export const Billing = () => {
           </FormControl>
           <FormControl fullWidth>
             <TextField
-              name="email"
-              placeholder="Email Address"
+              name="daytimePhone"
+              placeholder="Daytime Phone"
               size="small"
               fullWidth
-              value={formik.values.email}
+              value={formik.values.daytimePhone}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={formik.touched.email && Boolean(formik.errors.email)}
-              helperText={formik.touched.email && formik.errors.email}
+              error={
+                formik.touched.daytimePhone &&
+                Boolean(formik.errors.daytimePhone)
+              }
+              helperText={
+                (formik.touched.daytimePhone && formik.errors.daytimePhone) ||
+                'For delivery questions only'
+              }
             />
           </FormControl>
         </Stack>
         <Stack spacing={1}>
           <FormControl fullWidth>
             <FormLabel sx={{ marginBottom: 1, color: 'primary.main' }}>
-              Billing Address
+              Address
             </FormLabel>
             <TextField
               name="streetAddress"
@@ -235,7 +214,7 @@ export const Billing = () => {
                   {isAddressLoading ? (
                     <CircularProgress size={24} />
                   ) : (
-                    <LocationSearchingIcon />
+                    <LocationSearching />
                   )}
                 </IconButton>
               </InputAdornment>

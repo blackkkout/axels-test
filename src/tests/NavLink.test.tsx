@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { NavLink } from './NavLink';
+import { NavLink } from '../components/NavLink';
 
 describe('NavLink', () => {
   it('should take a snapshot', () => {

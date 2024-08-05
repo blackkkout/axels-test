@@ -12,13 +12,13 @@ import {
 } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Item } from '../Item/Item';
+import { Item } from './Item';
 import {
   ordersActions,
   ordersSelector,
   ordersStatusSelector,
   ordersSummarySelector,
-} from '../../redux/ducks/orders/orders';
+} from '../redux/ducks/orders/orders';
 
 export const Summary = () => {
   const theme = useTheme();

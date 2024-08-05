@@ -14,7 +14,7 @@ import ShieldTwoToneIcon from '@mui/icons-material/ShieldTwoTone';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 
-import { postPayment } from '../../api/orders';
+import { postPayment } from '../api/orders';
 
 const validationSchema = yup.object().shape({
   name: yup.string().required('Cardholder Name is required'),

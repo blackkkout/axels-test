@@ -1,8 +1,8 @@
 import { request } from './request';
 import { Order } from '../types/order';
-import { ShippingFormValues } from '../components/Shipping/Shipping';
-import { BillingFormValues } from '../components/Billing/Billing';
-import { PaymentFormValues } from '../components/Payment/Payment';
+import { ShippingFormValues } from '../components/Shipping';
+import { BillingFormValues } from '../components/Billing';
+import { PaymentFormValues } from '../components/Payment';
 
 export const getOrders = async () => {
   return request<{ orders: Order[] }>('/orders');

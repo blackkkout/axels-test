@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { Summary } from './Summary';
+import { Summary } from '../components/Summary';
 import configureStore from 'redux-mock-store';
 
 const theme = createTheme();
