@@ -18,12 +18,12 @@ import {
 import { useFormik } from 'formik';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useDebounce } from '@uidotdev/usehooks';
 import * as yup from 'yup';
 
-import { geolocationSelector } from '../redux/ducks/geolocation';
+import { geolocationSelector } from '../redux/ducks/geolocation/geolocation';
 import { getAddress } from '../api/address';
 import { postShipping } from '../api/orders';
+import { useDebounce } from '../hooks/useDebounce';
 
 const validationSchema = yup.object().shape({
   fullName: yup.string().required('Full Name is required'),

@@ -18,7 +18,7 @@ import {
   ordersSelector,
   ordersStatusSelector,
   ordersSummarySelector,
-} from '../redux/ducks/orders';
+} from '../redux/ducks/orders/orders';
 
 export const Summary = () => {
   const theme = useTheme();
