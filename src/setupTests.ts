@@ -22,5 +22,4 @@ class MockGeolocationPositionError
   }
 }
 
-// Replace the global GeolocationPositionError with our mock
 (global as any).GeolocationPositionError = MockGeolocationPositionError;
