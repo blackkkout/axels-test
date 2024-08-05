@@ -1,0 +1,465 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Summary should render correctly and match snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="MuiBox-root css-1bzmx7h"
+      >
+        <div
+          class="MuiStack-root css-n4fk8z-MuiStack-root"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
+          >
+            Order Summary
+          </p>
+          <a
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1g80g67-MuiTypography-root-MuiLink-root"
+          >
+            edit order
+          </a>
+        </div>
+        <div
+          class="MuiStack-root css-10kbc59-MuiStack-root"
+        >
+          <div>
+            <div
+              class="MuiStack-root css-p8evn3-MuiStack-root"
+            >
+              <div
+                class="MuiStack-root css-m69qwo-MuiStack-root"
+              >
+                <div
+                  class="MuiBox-root css-ls5xll"
+                >
+                  <img
+                    alt="Test Order"
+                    class="css-1on8nc4"
+                    src="test.jpg"
+                  />
+                </div>
+                <div
+                  class="MuiStack-root css-agsrie-MuiStack-root"
+                >
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 css-19n2ks6-MuiTypography-root"
+                  >
+                    Test Order
+                  </p>
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 css-1n8z4pj-MuiTypography-root"
+                  >
+                    <br />
+                    Quantity: 
+                    1
+                  </p>
+                </div>
+              </div>
+              <p
+                class="MuiTypography-root MuiTypography-body1 css-1t6yuoi-MuiTypography-root"
+              >
+                $
+                100
+              </p>
+            </div>
+            <hr
+              class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+            />
+          </div>
+        </div>
+        <div
+          class="MuiStack-root css-g0unoz-MuiStack-root"
+        >
+          <ul
+            class="MuiList-root MuiList-padding css-h4y409-MuiList-root"
+          >
+            <li
+              class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-ykqd4v-MuiListItem-root"
+            >
+              Subtotal
+            </li>
+            <li
+              class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-ykqd4v-MuiListItem-root"
+            >
+              Shipping
+            </li>
+            <li
+              class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-ykqd4v-MuiListItem-root"
+            >
+              Taxes
+            </li>
+          </ul>
+          <ul
+            class="MuiList-root MuiList-padding css-h4y409-MuiList-root"
+          >
+            <li
+              class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-cqynox-MuiListItem-root"
+            >
+              $
+              100
+            </li>
+            <li
+              class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-cqynox-MuiListItem-root"
+            >
+              Free
+            </li>
+            <li
+              class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-cqynox-MuiListItem-root"
+            >
+              $
+              10
+            </li>
+          </ul>
+        </div>
+        <hr
+          class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+        />
+        <div
+          class="MuiStack-root css-1iinpsy-MuiStack-root"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-dxihh7-MuiTypography-root"
+          >
+            Total
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-dxihh7-MuiTypography-root"
+          >
+            $
+            110
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="MuiBox-root css-1bzmx7h"
+    >
+      <div
+        class="MuiStack-root css-n4fk8z-MuiStack-root"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
+        >
+          Order Summary
+        </p>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1g80g67-MuiTypography-root-MuiLink-root"
+        >
+          edit order
+        </a>
+      </div>
+      <div
+        class="MuiStack-root css-10kbc59-MuiStack-root"
+      >
+        <div>
+          <div
+            class="MuiStack-root css-p8evn3-MuiStack-root"
+          >
+            <div
+              class="MuiStack-root css-m69qwo-MuiStack-root"
+            >
+              <div
+                class="MuiBox-root css-ls5xll"
+              >
+                <img
+                  alt="Test Order"
+                  class="css-1on8nc4"
+                  src="test.jpg"
+                />
+              </div>
+              <div
+                class="MuiStack-root css-agsrie-MuiStack-root"
+              >
+                <p
+                  class="MuiTypography-root MuiTypography-body1 css-19n2ks6-MuiTypography-root"
+                >
+                  Test Order
+                </p>
+                <p
+                  class="MuiTypography-root MuiTypography-body1 css-1n8z4pj-MuiTypography-root"
+                >
+                  <br />
+                  Quantity: 
+                  1
+                </p>
+              </div>
+            </div>
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-1t6yuoi-MuiTypography-root"
+            >
+              $
+              100
+            </p>
+          </div>
+          <hr
+            class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+          />
+        </div>
+      </div>
+      <div
+        class="MuiStack-root css-g0unoz-MuiStack-root"
+      >
+        <ul
+          class="MuiList-root MuiList-padding css-h4y409-MuiList-root"
+        >
+          <li
+            class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-ykqd4v-MuiListItem-root"
+          >
+            Subtotal
+          </li>
+          <li
+            class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-ykqd4v-MuiListItem-root"
+          >
+            Shipping
+          </li>
+          <li
+            class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-ykqd4v-MuiListItem-root"
+          >
+            Taxes
+          </li>
+        </ul>
+        <ul
+          class="MuiList-root MuiList-padding css-h4y409-MuiList-root"
+        >
+          <li
+            class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-cqynox-MuiListItem-root"
+          >
+            $
+            100
+          </li>
+          <li
+            class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-cqynox-MuiListItem-root"
+          >
+            Free
+          </li>
+          <li
+            class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-cqynox-MuiListItem-root"
+          >
+            $
+            10
+          </li>
+        </ul>
+      </div>
+      <hr
+        class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+      />
+      <div
+        class="MuiStack-root css-1iinpsy-MuiStack-root"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-dxihh7-MuiTypography-root"
+        >
+          Total
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-dxihh7-MuiTypography-root"
+        >
+          $
+          110
+        </p>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Summary should render loading state correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="MuiBox-root css-1bzmx7h"
+      >
+        <div
+          class="MuiStack-root css-n4fk8z-MuiStack-root"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
+          >
+            Order Summary
+          </p>
+          <a
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1g80g67-MuiTypography-root-MuiLink-root"
+          >
+            edit order
+          </a>
+        </div>
+        <div
+          class="MuiStack-root css-13f3otb-MuiStack-root"
+        >
+          <span
+            class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-18lrjg1-MuiCircularProgress-root"
+            role="progressbar"
+            style="width: 40px; height: 40px;"
+          >
+            <svg
+              class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+              viewBox="22 22 44 44"
+            >
+              <circle
+                class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+                cx="44"
+                cy="44"
+                fill="none"
+                r="20.2"
+                stroke-width="3.6"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="MuiBox-root css-1bzmx7h"
+    >
+      <div
+        class="MuiStack-root css-n4fk8z-MuiStack-root"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
+        >
+          Order Summary
+        </p>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1g80g67-MuiTypography-root-MuiLink-root"
+        >
+          edit order
+        </a>
+      </div>
+      <div
+        class="MuiStack-root css-13f3otb-MuiStack-root"
+      >
+        <span
+          class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-18lrjg1-MuiCircularProgress-root"
+          role="progressbar"
+          style="width: 40px; height: 40px;"
+        >
+          <svg
+            class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+            viewBox="22 22 44 44"
+          >
+            <circle
+              class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+              cx="44"
+              cy="44"
+              fill="none"
+              r="20.2"
+              stroke-width="3.6"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

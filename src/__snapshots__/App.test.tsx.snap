@@ -1,0 +1,1044 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should take a snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="MuiBox-root css-1cwp35e"
+      >
+        <div
+          class="MuiBox-root css-1o8fitl"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-container css-1sgmr83-MuiGrid-root"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-7 css-1a4ufwv-MuiGrid-root"
+            >
+              <div
+                class="MuiBox-root css-1kst6l9"
+              >
+                <nav
+                  aria-label="breadcrumb"
+                  class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-63vwl1-MuiTypography-root-MuiBreadcrumbs-root"
+                >
+                  <ol
+                    class="MuiBreadcrumbs-ol css-4pdmu4-MuiBreadcrumbs-ol"
+                  >
+                    <li
+                      class="MuiBreadcrumbs-li"
+                    >
+                      <a
+                        aria-current="page"
+                        class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-1jh8gr8-MuiTypography-root-MuiLink-root active"
+                        href="#/"
+                      >
+                        Shipping
+                      </a>
+                    </li>
+                    <li
+                      aria-hidden="true"
+                      class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="NavigateNextRoundedIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M9.31 6.71c-.39.39-.39 1.02 0 1.41L13.19 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.72 6.7c-.38-.38-1.02-.38-1.41.01"
+                        />
+                      </svg>
+                    </li>
+                    <li
+                      class="MuiBreadcrumbs-li"
+                    >
+                      <a
+                        class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-1jh8gr8-MuiTypography-root-MuiLink-root "
+                        href="#/billing"
+                      >
+                        Billing
+                      </a>
+                    </li>
+                    <li
+                      aria-hidden="true"
+                      class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="NavigateNextRoundedIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M9.31 6.71c-.39.39-.39 1.02 0 1.41L13.19 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.72 6.7c-.38-.38-1.02-.38-1.41.01"
+                        />
+                      </svg>
+                    </li>
+                    <li
+                      class="MuiBreadcrumbs-li"
+                    >
+                      <a
+                        class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-1jh8gr8-MuiTypography-root-MuiLink-root "
+                        href="#/payment"
+                      >
+                        Payment
+                      </a>
+                    </li>
+                  </ol>
+                </nav>
+                <form>
+                  <h5
+                    class="MuiTypography-root MuiTypography-h5 css-1s6g096-MuiTypography-root"
+                  >
+                    Shipping Info
+                  </h5>
+                  <div
+                    class="MuiStack-root css-1saxivv-MuiStack-root"
+                  >
+                    <div
+                      class="MuiStack-root css-jfdv4h-MuiStack-root"
+                    >
+                      <div
+                        class="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                      >
+                        <label
+                          class="MuiFormLabel-root MuiFormLabel-colorPrimary css-17ejyhz-MuiFormLabel-root"
+                        >
+                          Recipient
+                        </label>
+                        <div
+                          class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                        >
+                          <div
+                            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-p7quta-MuiInputBase-root-MuiOutlinedInput-root"
+                          >
+                            <input
+                              aria-invalid="false"
+                              class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+                              id=":r0:"
+                              name="fullName"
+                              placeholder="Full Name"
+                              type="text"
+                              value=""
+                            />
+                            <fieldset
+                              aria-hidden="true"
+                              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                            >
+                              <legend
+                                class="css-ihdtdm"
+                              >
+                                <span
+                                  class="notranslate"
+                                >
+                                  ​
+                                </span>
+                              </legend>
+                            </fieldset>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                      >
+                        <div
+                          class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                        >
+                          <div
+                            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-p7quta-MuiInputBase-root-MuiOutlinedInput-root"
+                          >
+                            <input
+                              aria-describedby=":r1:-helper-text"
+                              aria-invalid="false"
+                              class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+                              id=":r1:"
+                              name="daytimePhone"
+                              placeholder="Daytime Phone"
+                              type="text"
+                              value=""
+                            />
+                            <fieldset
+                              aria-hidden="true"
+                              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                            >
+                              <legend
+                                class="css-ihdtdm"
+                              >
+                                <span
+                                  class="notranslate"
+                                >
+                                  ​
+                                </span>
+                              </legend>
+                            </fieldset>
+                          </div>
+                          <p
+                            class="MuiFormHelperText-root MuiFormHelperText-sizeSmall MuiFormHelperText-contained css-k4qjio-MuiFormHelperText-root"
+                            id=":r1:-helper-text"
+                          >
+                            For delivery questions only
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiStack-root css-jfdv4h-MuiStack-root"
+                    >
+                      <div
+                        class="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                      >
+                        <label
+                          class="MuiFormLabel-root MuiFormLabel-colorPrimary css-17ejyhz-MuiFormLabel-root"
+                        >
+                          Address
+                        </label>
+                        <div
+                          class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                        >
+                          <div
+                            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-p7quta-MuiInputBase-root-MuiOutlinedInput-root"
+                          >
+                            <input
+                              aria-invalid="false"
+                              class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+                              id=":r2:"
+                              name="streetAddress"
+                              placeholder="Street Address"
+                              type="text"
+                              value=""
+                            />
+                            <fieldset
+                              aria-hidden="true"
+                              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                            >
+                              <legend
+                                class="css-ihdtdm"
+                              >
+                                <span
+                                  class="notranslate"
+                                >
+                                  ​
+                                </span>
+                              </legend>
+                            </fieldset>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                      >
+                        <div
+                          class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                        >
+                          <div
+                            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-p7quta-MuiInputBase-root-MuiOutlinedInput-root"
+                          >
+                            <input
+                              aria-invalid="false"
+                              class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+                              id=":r3:"
+                              name="apt"
+                              placeholder="Apt, Suite, Bldg, Gate Code. (optional)"
+                              type="text"
+                              value=""
+                            />
+                            <fieldset
+                              aria-hidden="true"
+                              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                            >
+                              <legend
+                                class="css-ihdtdm"
+                              >
+                                <span
+                                  class="notranslate"
+                                >
+                                  ​
+                                </span>
+                              </legend>
+                            </fieldset>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                    >
+                      <div
+                        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall MuiInputBase-adornedEnd css-6kp6rf-MuiInputBase-root-MuiOutlinedInput-root"
+                      >
+                        <input
+                          aria-invalid="false"
+                          class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input"
+                          name="city"
+                          placeholder="City"
+                          type="text"
+                          value=""
+                        />
+                        <div
+                          class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1laqsz7-MuiInputAdornment-root"
+                        >
+                          <button
+                            aria-label="get location"
+                            class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root"
+                            disabled=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                              data-testid="LocationSearchingIcon"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M20.94 11c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                        <fieldset
+                          aria-hidden="true"
+                          class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                        >
+                          <legend
+                            class="css-ihdtdm"
+                          >
+                            <span
+                              class="notranslate"
+                            >
+                              ​
+                            </span>
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiStack-root css-pl8gqh-MuiStack-root"
+                    >
+                      <div
+                        class="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                      >
+                        <div
+                          class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon css-ka7ti6-MuiAutocomplete-root"
+                        >
+                          <div
+                            class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                          >
+                            <div
+                              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-6yd2ua-MuiInputBase-root-MuiOutlinedInput-root"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-expanded="false"
+                                aria-invalid="false"
+                                autocapitalize="none"
+                                autocomplete="off"
+                                class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input"
+                                id=":r4:"
+                                name="country"
+                                placeholder="Country"
+                                role="combobox"
+                                spellcheck="false"
+                                type="text"
+                                value=""
+                              />
+                              <div
+                                class="MuiAutocomplete-endAdornment css-p1olib-MuiAutocomplete-endAdornment"
+                              >
+                                <button
+                                  aria-label="Clear"
+                                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-clearIndicator css-1glvl0p-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-clearIndicator"
+                                  tabindex="-1"
+                                  title="Clear"
+                                  type="button"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                                    data-testid="CloseIcon"
+                                    focusable="false"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                    />
+                                  </svg>
+                                  <span
+                                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                  />
+                                </button>
+                              </div>
+                              <fieldset
+                                aria-hidden="true"
+                                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                              >
+                                <legend
+                                  class="css-ihdtdm"
+                                >
+                                  <span
+                                    class="notranslate"
+                                  >
+                                    ​
+                                  </span>
+                                </legend>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                      >
+                        <div
+                          class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                        >
+                          <div
+                            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-p7quta-MuiInputBase-root-MuiOutlinedInput-root"
+                          >
+                            <input
+                              aria-invalid="false"
+                              class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+                              id=":r6:"
+                              name="zip"
+                              placeholder="ZIP"
+                              type="text"
+                              value=""
+                            />
+                            <fieldset
+                              aria-hidden="true"
+                              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                            >
+                              <legend
+                                class="css-ihdtdm"
+                              >
+                                <span
+                                  class="notranslate"
+                                >
+                                  ​
+                                </span>
+                              </legend>
+                            </fieldset>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-ir8t22-MuiButtonBase-root-MuiButton-root"
+                    tabindex="0"
+                    type="submit"
+                  >
+                    Continue
+                    <span
+                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-5 css-urj5pv-MuiGrid-root"
+            >
+              <div
+                class="MuiBox-root css-1h7aeac"
+              >
+                <div
+                  class="MuiBox-root css-1bzmx7h"
+                >
+                  <div
+                    class="MuiStack-root css-n4fk8z-MuiStack-root"
+                  >
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 css-153dsb4-MuiTypography-root"
+                    >
+                      Order Summary
+                    </p>
+                    <a
+                      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1g80g67-MuiTypography-root-MuiLink-root"
+                    >
+                      edit order
+                    </a>
+                  </div>
+                  <div
+                    class="MuiStack-root css-13f3otb-MuiStack-root"
+                  >
+                    <span
+                      class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-2l74bw-MuiCircularProgress-root"
+                      role="progressbar"
+                      style="width: 40px; height: 40px;"
+                    >
+                      <svg
+                        class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                        viewBox="22 22 44 44"
+                      >
+                        <circle
+                          class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+                          cx="44"
+                          cy="44"
+                          fill="none"
+                          r="20.2"
+                          stroke-width="3.6"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="MuiBox-root css-1cwp35e"
+    >
+      <div
+        class="MuiBox-root css-1o8fitl"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container css-1sgmr83-MuiGrid-root"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-7 css-1a4ufwv-MuiGrid-root"
+          >
+            <div
+              class="MuiBox-root css-1kst6l9"
+            >
+              <nav
+                aria-label="breadcrumb"
+                class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-63vwl1-MuiTypography-root-MuiBreadcrumbs-root"
+              >
+                <ol
+                  class="MuiBreadcrumbs-ol css-4pdmu4-MuiBreadcrumbs-ol"
+                >
+                  <li
+                    class="MuiBreadcrumbs-li"
+                  >
+                    <a
+                      aria-current="page"
+                      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-1jh8gr8-MuiTypography-root-MuiLink-root active"
+                      href="#/"
+                    >
+                      Shipping
+                    </a>
+                  </li>
+                  <li
+                    aria-hidden="true"
+                    class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="NavigateNextRoundedIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M9.31 6.71c-.39.39-.39 1.02 0 1.41L13.19 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.72 6.7c-.38-.38-1.02-.38-1.41.01"
+                      />
+                    </svg>
+                  </li>
+                  <li
+                    class="MuiBreadcrumbs-li"
+                  >
+                    <a
+                      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-1jh8gr8-MuiTypography-root-MuiLink-root "
+                      href="#/billing"
+                    >
+                      Billing
+                    </a>
+                  </li>
+                  <li
+                    aria-hidden="true"
+                    class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="NavigateNextRoundedIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M9.31 6.71c-.39.39-.39 1.02 0 1.41L13.19 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.72 6.7c-.38-.38-1.02-.38-1.41.01"
+                      />
+                    </svg>
+                  </li>
+                  <li
+                    class="MuiBreadcrumbs-li"
+                  >
+                    <a
+                      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-1jh8gr8-MuiTypography-root-MuiLink-root "
+                      href="#/payment"
+                    >
+                      Payment
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+              <form>
+                <h5
+                  class="MuiTypography-root MuiTypography-h5 css-1s6g096-MuiTypography-root"
+                >
+                  Shipping Info
+                </h5>
+                <div
+                  class="MuiStack-root css-1saxivv-MuiStack-root"
+                >
+                  <div
+                    class="MuiStack-root css-jfdv4h-MuiStack-root"
+                  >
+                    <div
+                      class="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                    >
+                      <label
+                        class="MuiFormLabel-root MuiFormLabel-colorPrimary css-17ejyhz-MuiFormLabel-root"
+                      >
+                        Recipient
+                      </label>
+                      <div
+                        class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                      >
+                        <div
+                          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-p7quta-MuiInputBase-root-MuiOutlinedInput-root"
+                        >
+                          <input
+                            aria-invalid="false"
+                            class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+                            id=":r0:"
+                            name="fullName"
+                            placeholder="Full Name"
+                            type="text"
+                            value=""
+                          />
+                          <fieldset
+                            aria-hidden="true"
+                            class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                          >
+                            <legend
+                              class="css-ihdtdm"
+                            >
+                              <span
+                                class="notranslate"
+                              >
+                                ​
+                              </span>
+                            </legend>
+                          </fieldset>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                    >
+                      <div
+                        class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                      >
+                        <div
+                          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-p7quta-MuiInputBase-root-MuiOutlinedInput-root"
+                        >
+                          <input
+                            aria-describedby=":r1:-helper-text"
+                            aria-invalid="false"
+                            class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+                            id=":r1:"
+                            name="daytimePhone"
+                            placeholder="Daytime Phone"
+                            type="text"
+                            value=""
+                          />
+                          <fieldset
+                            aria-hidden="true"
+                            class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                          >
+                            <legend
+                              class="css-ihdtdm"
+                            >
+                              <span
+                                class="notranslate"
+                              >
+                                ​
+                              </span>
+                            </legend>
+                          </fieldset>
+                        </div>
+                        <p
+                          class="MuiFormHelperText-root MuiFormHelperText-sizeSmall MuiFormHelperText-contained css-k4qjio-MuiFormHelperText-root"
+                          id=":r1:-helper-text"
+                        >
+                          For delivery questions only
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiStack-root css-jfdv4h-MuiStack-root"
+                  >
+                    <div
+                      class="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                    >
+                      <label
+                        class="MuiFormLabel-root MuiFormLabel-colorPrimary css-17ejyhz-MuiFormLabel-root"
+                      >
+                        Address
+                      </label>
+                      <div
+                        class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                      >
+                        <div
+                          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-p7quta-MuiInputBase-root-MuiOutlinedInput-root"
+                        >
+                          <input
+                            aria-invalid="false"
+                            class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+                            id=":r2:"
+                            name="streetAddress"
+                            placeholder="Street Address"
+                            type="text"
+                            value=""
+                          />
+                          <fieldset
+                            aria-hidden="true"
+                            class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                          >
+                            <legend
+                              class="css-ihdtdm"
+                            >
+                              <span
+                                class="notranslate"
+                              >
+                                ​
+                              </span>
+                            </legend>
+                          </fieldset>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                    >
+                      <div
+                        class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                      >
+                        <div
+                          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-p7quta-MuiInputBase-root-MuiOutlinedInput-root"
+                        >
+                          <input
+                            aria-invalid="false"
+                            class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+                            id=":r3:"
+                            name="apt"
+                            placeholder="Apt, Suite, Bldg, Gate Code. (optional)"
+                            type="text"
+                            value=""
+                          />
+                          <fieldset
+                            aria-hidden="true"
+                            class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                          >
+                            <legend
+                              class="css-ihdtdm"
+                            >
+                              <span
+                                class="notranslate"
+                              >
+                                ​
+                              </span>
+                            </legend>
+                          </fieldset>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                  >
+                    <div
+                      class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall MuiInputBase-adornedEnd css-6kp6rf-MuiInputBase-root-MuiOutlinedInput-root"
+                    >
+                      <input
+                        aria-invalid="false"
+                        class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input"
+                        name="city"
+                        placeholder="City"
+                        type="text"
+                        value=""
+                      />
+                      <div
+                        class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1laqsz7-MuiInputAdornment-root"
+                      >
+                        <button
+                          aria-label="get location"
+                          class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root"
+                          disabled=""
+                          tabindex="-1"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                            data-testid="LocationSearchingIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M20.94 11c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      <fieldset
+                        aria-hidden="true"
+                        class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                      >
+                        <legend
+                          class="css-ihdtdm"
+                        >
+                          <span
+                            class="notranslate"
+                          >
+                            ​
+                          </span>
+                        </legend>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiStack-root css-pl8gqh-MuiStack-root"
+                  >
+                    <div
+                      class="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                    >
+                      <div
+                        class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon css-ka7ti6-MuiAutocomplete-root"
+                      >
+                        <div
+                          class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                        >
+                          <div
+                            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-6yd2ua-MuiInputBase-root-MuiOutlinedInput-root"
+                          >
+                            <input
+                              aria-autocomplete="list"
+                              aria-expanded="false"
+                              aria-invalid="false"
+                              autocapitalize="none"
+                              autocomplete="off"
+                              class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input"
+                              id=":r4:"
+                              name="country"
+                              placeholder="Country"
+                              role="combobox"
+                              spellcheck="false"
+                              type="text"
+                              value=""
+                            />
+                            <div
+                              class="MuiAutocomplete-endAdornment css-p1olib-MuiAutocomplete-endAdornment"
+                            >
+                              <button
+                                aria-label="Clear"
+                                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-clearIndicator css-1glvl0p-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-clearIndicator"
+                                tabindex="-1"
+                                title="Clear"
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                                  data-testid="CloseIcon"
+                                  focusable="false"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                  />
+                                </svg>
+                                <span
+                                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                />
+                              </button>
+                            </div>
+                            <fieldset
+                              aria-hidden="true"
+                              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                            >
+                              <legend
+                                class="css-ihdtdm"
+                              >
+                                <span
+                                  class="notranslate"
+                                >
+                                  ​
+                                </span>
+                              </legend>
+                            </fieldset>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                    >
+                      <div
+                        class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                      >
+                        <div
+                          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-p7quta-MuiInputBase-root-MuiOutlinedInput-root"
+                        >
+                          <input
+                            aria-invalid="false"
+                            class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+                            id=":r6:"
+                            name="zip"
+                            placeholder="ZIP"
+                            type="text"
+                            value=""
+                          />
+                          <fieldset
+                            aria-hidden="true"
+                            class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                          >
+                            <legend
+                              class="css-ihdtdm"
+                            >
+                              <span
+                                class="notranslate"
+                              >
+                                ​
+                              </span>
+                            </legend>
+                          </fieldset>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-ir8t22-MuiButtonBase-root-MuiButton-root"
+                  tabindex="0"
+                  type="submit"
+                >
+                  Continue
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </form>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-5 css-urj5pv-MuiGrid-root"
+          >
+            <div
+              class="MuiBox-root css-1h7aeac"
+            >
+              <div
+                class="MuiBox-root css-1bzmx7h"
+              >
+                <div
+                  class="MuiStack-root css-n4fk8z-MuiStack-root"
+                >
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 css-153dsb4-MuiTypography-root"
+                  >
+                    Order Summary
+                  </p>
+                  <a
+                    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1g80g67-MuiTypography-root-MuiLink-root"
+                  >
+                    edit order
+                  </a>
+                </div>
+                <div
+                  class="MuiStack-root css-13f3otb-MuiStack-root"
+                >
+                  <span
+                    class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-2l74bw-MuiCircularProgress-root"
+                    role="progressbar"
+                    style="width: 40px; height: 40px;"
+                  >
+                    <svg
+                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                      viewBox="22 22 44 44"
+                    >
+                      <circle
+                        class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+                        cx="44"
+                        cy="44"
+                        fill="none"
+                        r="20.2"
+                        stroke-width="3.6"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
