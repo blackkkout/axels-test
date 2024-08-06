@@ -1,5 +1,8 @@
-import { RootState } from '../../store';
-import { geolocationErrorSelector, geolocationSelector } from './geolocation';
+import { RootState } from '../../redux/store';
+import {
+  geolocationErrorSelector,
+  geolocationSelector,
+} from '../../redux/ducks/geolocation';
 
 describe('geolocation selectors', () => {
   const mockState: RootState = {

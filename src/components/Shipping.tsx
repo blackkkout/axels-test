@@ -20,7 +20,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 
-import { geolocationSelector } from '../redux/ducks/geolocation/geolocation';
+import { geolocationSelector } from '../redux/ducks/geolocation';
 import { getAddress } from '../api/address';
 import { postShipping } from '../api/orders';
 import { useDebounce } from '../hooks/useDebounce';
@@ -92,7 +92,7 @@ export const Shipping = () => {
 
   const countries = ['United States', 'Canada', 'Mexico', 'Ukraine'];
 
-  const debouncedFormikValues = useDebounce(formik.values, 1000);
+  const debouncedFormikValues = useDebounce(formik.values, 500);
 
   useEffect(() => {
     const values = JSON.parse(localStorage.getItem('shipping') || '{}');

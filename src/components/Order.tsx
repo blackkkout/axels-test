@@ -8,7 +8,7 @@ import { Root } from '../styled/Order';
 import { NavLink } from './NavLink';
 import { Summary } from './Summary';
 import { Confirmation } from './Confirmation';
-import { geolocationActions } from '../redux/ducks/geolocation/geolocation';
+import { geolocationActions } from '../redux/ducks/geolocation';
 
 export const Order = () => {
   const theme = useTheme();

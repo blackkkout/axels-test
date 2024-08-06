@@ -4,7 +4,7 @@ import {
   getGeolocation,
   geolocationActions,
   requestGeolocation,
-} from './geolocation';
+} from '../../redux/ducks/geolocation';
 
 class MockGeolocationPositionError
   extends Error

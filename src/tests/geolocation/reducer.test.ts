@@ -3,7 +3,7 @@ import {
   geolocationReducer,
   GeolocationState,
   serializeGeolocationPosition,
-} from './geolocation';
+} from '../../redux/ducks/geolocation';
 
 describe('geolocationReducer', () => {
   const initialState: GeolocationState = {

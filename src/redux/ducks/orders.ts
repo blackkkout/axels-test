@@ -1,10 +1,9 @@
-import { createAction, PayloadAction } from '@reduxjs/toolkit';
-import { createSlice } from '@reduxjs/toolkit';
+import { createAction, PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { put } from 'redux-saga/effects';
 
-import { getOrders } from '../../../api/orders';
-import { Order } from '../../../types/order';
-import { RootState } from '../../store';
+import { getOrders } from '../../api/orders';
+import { Order } from '../../types/order';
+import { RootState } from '../store';
 
 export const _status = {
   idle: 'idle',

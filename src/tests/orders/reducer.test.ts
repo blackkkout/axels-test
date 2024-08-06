@@ -1,11 +1,11 @@
-import { Order } from '../../../types/order';
+import { Order } from '../../types/order';
 import {
   ordersActions,
   ordersReducer,
   OrdersState,
   _status,
   calculateSummary,
-} from './orders';
+} from '../../redux/ducks/orders';
 
 describe('ordersReducer', () => {
   const initialState: OrdersState = {

@@ -1,10 +1,10 @@
-import { RootState } from '../../store';
+import { RootState } from '../../redux/store';
 import {
   _status,
   ordersSelector,
   ordersStatusSelector,
   ordersSummarySelector,
-} from './orders';
+} from '../../redux/ducks/orders';
 
 describe('orders selectors', () => {
   const mockState: RootState = {

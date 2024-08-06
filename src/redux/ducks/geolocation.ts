@@ -1,7 +1,7 @@
 import { createAction, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { put, call } from 'redux-saga/effects';
 
-import { RootState } from '../../store';
+import { RootState } from '../store';
 
 interface SerializableGeolocationPosition {
   coords: {

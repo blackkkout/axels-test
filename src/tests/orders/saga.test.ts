@@ -1,8 +1,8 @@
 import { put } from 'redux-saga/effects';
 
-import { fetchOrders, ordersActions } from './orders';
-import { getOrders } from '../../../api/orders';
-import { Order } from '../../../types/order';
+import { fetchOrders, ordersActions } from '../../redux/ducks/orders';
+import { getOrders } from '../../api/orders';
+import { Order } from '../../types/order';
 
 describe('fetchOrders saga', () => {
   it('should fetch orders successfully', () => {

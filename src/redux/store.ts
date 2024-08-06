@@ -2,16 +2,12 @@ import { configureStore } from '@reduxjs/toolkit';
 import { takeEvery } from 'redux-saga/effects';
 import createSagaMiddleware from 'redux-saga';
 
-import {
-  ordersReducer,
-  fetchOrders,
-  ordersActions,
-} from './ducks/orders/orders';
+import { ordersReducer, fetchOrders, ordersActions } from './ducks/orders';
 import {
   geolocationActions,
   geolocationReducer,
   getGeolocation,
-} from './ducks/geolocation/geolocation';
+} from './ducks/geolocation';
 
 const sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];
